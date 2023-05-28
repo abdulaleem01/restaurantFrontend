@@ -12,6 +12,9 @@ import { Order } from './customer/menu/menu.component';
 })
 export class MyserviceService {
 
+  screenHeight = window.innerHeight;
+  screenWidth = window.innerWidth;
+
   domainUrl:string="https://abdulbackendrestaurant.azurewebsites.net/api";
   customerId!:number;
   tableNo!:number;

@@ -18,13 +18,20 @@ export class BillstatusComponent {
   customerDetails:any;
   visitDetailss:any;
   visitid!:number;
+
+  viewHeight:any;
   constructor(private route:ActivatedRoute,private service:MyserviceService,private route1:Router){}
 
   ngOnInit(){
+
+
     this.route.params.subscribe( params => {      
       console.log(params)
       this.visitid = params['id'];
       });
+
+      this.viewHeight = this.service.screenHeight/25;
+
 
     // this.visitDetailss = this.service.visitDetails;
     // this.tableNo = this.service.tableNo;

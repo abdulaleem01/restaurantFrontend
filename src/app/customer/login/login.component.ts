@@ -12,6 +12,10 @@ export class LoginComponent {
   password:string = ""
   constructor(private service:MyserviceService,private route:Router){}
 
+  ngOnInit(){
+    console.log(this.service.screenHeight);
+  }
+
   LoginSubmit(){
     console.log(this.name,this.password);
     const login = new LoginClass();

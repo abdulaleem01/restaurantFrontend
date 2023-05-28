@@ -14,9 +14,11 @@ export class PaymentoflineComponent {
   customerDetails:any;
   visitDetailss:any;
   
+  viewHeight:any;
   constructor(private service:MyserviceService){}
   
   ngOnInit(){
+    this.viewHeight = this.service.screenHeight/25;
     // this.visitDetailss = this.service.visitDetails;
     this.tableNo = this.service.tableNo;
     this.service.GetTotalAmountByVisit(this.service.visitId).subscribe(response =>{
