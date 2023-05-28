@@ -1,0 +1,48 @@
+.main{
+    margin-top:80px;
+}
+
+.bg1{
+    background-color: lightblue;
+    border-radius: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bg4{
+    background-color: orangered;
+    border-radius: 20px;
+}
+.im11{
+    width: 8vh;
+    height: 8vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.head5{
+    display: flex;
+}
+
+.head1{
+    display: flex;
+}
+.h33{
+    align-self: flex-end;
+    margin-left: auto;
+}
+.bg2{
+    background-color: lightcoral;
+    border-radius: 20px;
+}
+
+.infobox{
+    display: flex;
+}
+.it2{
+    margin-left: auto;
+}
+.cd{
+    height: 30vh;
+}

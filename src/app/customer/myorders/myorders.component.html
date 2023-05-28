@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+<div class="container">
+<h1>My Orders - </h1>
+<cdk-virtual-scroll-viewport class="bg1" appendOnly itemSize="10" >
+    <div  *cdkVirtualFor="let i of visit;" >
+    <div (click)="onClick(i.visitId)"  *ngIf="i.deliveryStatus!=0" class="bg2">
+        <div class="con1">
+            <h5 class="con11">Bill No : {{i.visitId}}</h5>
+            <h5 class="con12">Date : {{i.date}}</h5>
+            <h5 class="con13">Time : {{i.time}}</h5>
+        </div>
+        <hr>
+        <div class="con2"> 
+
+            <h6 *ngIf="i.deliveryStatus == 1">Delivery Status : Order Confirmed</h6>
+            <h6 *ngIf="i.deliveryStatus == 2">Delivery Status : Delivered</h6>
+
+            <h6 *ngIf="i.paymentStatus == 1">Payment Status : Not Paid</h6>
+            <h6 *ngIf="i.paymentStatus == 2">Payment Status : Paid</h6>
+
+        </div>
+    </div>
+</div>
+</cdk-virtual-scroll-viewport>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,79 @@
+<app-navbar>
+
+</app-navbar>
+
+<div class="main">
+
+<div class="mp container">
+    <button type="button" (click)="onClickCart()" class="btn btn-primary position-relative">
+        CART
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{cartQuantityIndicator}}
+          <!-- <span class="visually-hidden">unread messages</span> -->
+        </span>
+      </button>
+
+
+</div>
+
+<!-- <div class="container text-center">
+    <div class="row mrr">
+      <div class="col-xl-4">
+        <div class="card mrr" style="width: 18rem;">
+            <img src="https://restaurantstorage.blob.core.windows.net/dishesimage/1664355716079.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-title">Dish Name</h4>
+              <p class="card-text">Description : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title"><b>Price : </b>200</h5>
+              <h6><b>Preparation Time : </b> 20 mins</h6>
+              
+
+              <a *ngIf="!CheckForAddedOnce(1)" (click)="OnClickAdd(1)" class="btn btn-primary">Add To Cart</a>
+              <div>
+                <a *ngIf="CheckForAddedOnce(1)" (click)="onClickMinus(1)" class="btn btn-primary">-</a>
+                &nbsp;
+                <a *ngIf="CheckForAddedOnce(1)" (click)="onClickAdd(1)" class="btn btn-primary">+ {{DishesExistInCard(1)}}</a>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+    </div>
+  </div> -->
+
+  <!-- 
+  <button (click)="onClickAdd(1)">addd</button>
+  <button (click)="onClickMinus(1)">minuss</button> -->
+
+  <div class="container text-center">
+    <div  class="row mrr">
+      <cdk-virtual-scroll-viewport class="cd" appendOnly itemSize="100">
+
+      <div *cdkVirtualFor="let i of AllDishes" class="col-4 xxx">
+        <div class="card mrr" style="width: 18rem;">
+            <!-- <img src ="https://restaurantstorage.blob.core.windows.net/dishesimage/" class="card-img-top" alt="..."> -->
+            <img src ="https://restaurantstorage.blob.core.windows.net/dishesimage/{{i.imageUrl}}" class="card-img-top" alt="...">
+
+            <div class="card-body">
+              <h4 class="card-title">{{i.name}}</h4>
+              <p class="card-text">Description : {{i.description}}</p>
+              <h5 class="card-title"><b>Price : </b>{{i.price}}Rs</h5>
+              <h6><b>Preparation Time : </b> {{i.cookingTime}}mins</h6>
+              
+
+              <a *ngIf="!CheckForAddedOnce(i.dishId)" (click)="OnClickAdd(i.dishId)" class="btn btn-primary">Add To Cart</a>
+              <div>
+                <a *ngIf="CheckForAddedOnce(i.dishId)" (click)="onClickMinus(i.dishId)" class="btn btn-primary">-</a>
+                &nbsp;
+                <a *ngIf="CheckForAddedOnce(i.dishId)" (click)="onClickAdd(i.dishId)" class="btn btn-primary">+ {{DishesExistInCard(i.dishId)}}</a>
+              </div>
+            </div>
+          </div>
+          &nbsp;
+      </div>
+</cdk-virtual-scroll-viewport>
+      </div>
+      
+    </div>
+  </div>
+  

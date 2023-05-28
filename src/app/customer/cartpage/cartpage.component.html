@@ -1,0 +1,72 @@
+<app-navbar> </app-navbar>
+<div class="main">
+<div class="container">
+    <h1>Cart - </h1>
+    <div class="bg1">
+        <div class="infobox">
+            <h3>Table No : {{tableNo}}</h3>
+            <h6 class="it2">Delivery Time : {{deliveryTime}}mins</h6>
+        </div>
+        <div>
+            <div class="bg2">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let i of orderList; let x = index">
+                      <tr>
+                        <th scope="row">{{x}}</th>
+                        <td>{{i.name}}</td>
+                        <td>{{i.price}}</td>
+                        <td><a (click)="onRemove(i.orderId)" class="btn btn-danger">Remove</a></td>
+                      </tr>
+                      <!-- <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr> -->
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="infobox">
+            <h3>Total Amount - {{totalOrderAmount}}Rs</h3>
+            <!-- <a  (click)="onBook()" class="btn btn-success it2">Place Order</a> -->
+            <button type="button" class="btn btn-primary it2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Pay
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Total Amount - {{totalOrderAmount}}Rs
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" disabled="true" class="btn btn-primary">Pay Online</button>
+        <button type="button" (click)="onBook()" class="btn btn-primary" data-bs-dismiss="modal">Pay At Counter</button>
+      </div>
+    </div>
+  </div>
+</div>

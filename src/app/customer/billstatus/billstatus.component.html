@@ -1,0 +1,72 @@
+<app-navbar> </app-navbar>
+
+<div class="main">
+    <div class="container head5">
+        <img class="im11" src="../../../assets/accept.png" alt="orderconfirmed.png">
+
+    </div>
+    <div class="container head6">
+        
+        <h1>Bill Summary - </h1>
+        <div class="container bg4">
+            <div class="head1">
+            <h2><b> Name :</b> {{customerDetails.name}}</h2>
+            <h3 class="h33"><b>Email :</b> {{customerDetails.email}}</h3>
+             </div>
+             <div>
+                <h4>Date : {{visitDetailss.date}}</h4>
+                <h4>Time : {{visitDetailss.time}}</h4>
+                <h5>Bill No : {{visitDetailss.visitId}}</h5>
+                <h5 *ngIf="visitDetailss.deliveryStatus == 1">Order Status : Order Confirmed</h5>
+                <h5 *ngIf="visitDetailss.deliveryStatus == 2">Order Status : Delivered</h5>
+
+                <h5 *ngIf="visitDetailss.paymentStatus == 1">Payment Status : Pending </h5>
+                <h5 *ngIf="visitDetailss.paymentStatus == 2">Payment Status : Done </h5>
+
+            </div>
+
+        </div>
+        <div class="bg1">
+            <div class="infobox">
+                <h3>Table No : {{tableNo}}</h3>
+                <h6 class="it2">Delivery Time : {{deliveryTime}}mins</h6>
+            </div>
+            <div>
+                <div class="bg2">
+                    <cdk-virtual-scroll-viewport class="cd" appendOnly itemSize="10">
+
+                        <!-- <div *cdkVirtualFor="let i of AllDishes" class="col-4 xxx"> -->
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Name</th>
+                            <!-- <th scope="col">Price</th> -->
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody *cdkVirtualFor="let i of orderList; let x = index">
+                          <tr>
+                            <th scope="row">{{x}}</th>
+                            <td>{{i.name}}</td>
+                            <td>{{i.price}}</td>
+                            <!-- <td><a (click)="onRemove(i.orderId)" class="btn btn-danger">Remove</a></td> -->
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                    </cdk-virtual-scroll-viewport>
+                </div>
+            
+                </div>
+            </div>
+            <div class="infobox">
+                <h3>Total Amount - {{totalOrderAmount}}Rs</h3>
+                <!-- <a  (click)="onBook()" class="btn btn-success it2">Place Order</a> -->
+                <!-- <button type="button" class="btn btn-primary it2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Pay
+                </button> -->
+            </div>
+        </div>
+<!-- </div> -->

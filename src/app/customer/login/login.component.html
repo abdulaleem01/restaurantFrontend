@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+<!-- <div class="container head">
+<h1>Login</h1>
+<div class="row g-3 align-items-center">
+    <div class="col-auto hh">
+      <label for="inputPassword6" class="col-form-label">Email</label>
+    </div>
+    <div class="col-auto">
+      <input [(ngModel)]="name" type="email" id="inputPassword6" class="form-control" aria-labelledby="passwordHelpInline">
+    </div>
+   
+  </div>
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="inputPassword6" class="col-form-label">Password</label>
+    </div>
+    <div class="col-auto">
+      <input [(ngModel)]="password" type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline">
+    </div>
+    <div class="col-auto">
+      <span id="passwordHelpInline" class="form-text">
+        Must be 8-20 characters long.
+      </span>
+    </div>
+  </div>
+  <br>
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+
+    </div>
+    <div class="col-auto">
+
+    </div>
+    <div class="col-auto">
+
+    </div>
+    <div class="col-auto">
+
+    </div>
+    <div class="col-auto">
+        <button (click)="LoginSubmit()" type="button" class="btn btn-primary">Login</button>
+    </div>
+</div>
+
+</div> -->
+
+
+<div class="login-page">
+  <div class="form">
+    <!-- <form class="register-form"> -->
+      <!-- <input type="text" placeholder="name"/> -->
+      <!-- <input type="password" placeholder="password"/> -->
+      <!-- <input type="text" placeholder="email address"/> -->
+      <!-- <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form> -->
+    <div class="login-form">
+      <input [(ngModel)]="name" type="text" placeholder="username"/>
+      <input  [(ngModel)]="password" type="password" placeholder="password"/>
+      <button (click)="LoginSubmit()">login</button>
+      <p class="message">Not registered? <a routerLink="/signup">Create an account</a></p>
+      <p class="message">Forgot Password? <a data-bs-toggle="modal"  data-bs-target="#exampleModal" >Reset</a></p>
+
+    </div>
+  
+</div>
+</div>
+
+
+<div>
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Change Password
+    </button> -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Change Password</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="input-group input-group-sm mb-3">
+                  <span  class="input-group-text" id="inputGroup-sizing-sm">Email : </span>
+                  <input [(ngModel)]="email" type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Old Password : </span>
+                  <input [(ngModel)]="pass1" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">New Password : </span>
+                  <input [(ngModel)]="pass2" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Confirm Password : </span>
+                  <input [(ngModel)]="pass3" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button (click)="changePass()" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
