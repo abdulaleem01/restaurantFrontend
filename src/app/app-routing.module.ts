@@ -11,12 +11,19 @@ import { PaymentoflineComponent } from './customer/paymentofline/paymentofline.c
 import { MyordersComponent } from './customer/myorders/myorders.component';
 import { BillstatusComponent } from './customer/billstatus/billstatus.component';
 import { MyprofileComponent } from './customer/myprofile/myprofile.component';
+
+import { TablesComponent } from './admin/tables/tables.component';
+import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
+import { AdminsignupComponent } from './admin/adminsignup/adminsignup.component';
+import { PendingdeliveriesComponent } from './admin/pendingdeliveries/pendingdeliveries.component';
+
+
+
 import { AuthGuard } from './authguard.guard';
 
 
 const routes: Routes = [
   {path:'',component:CustomerhomeComponent},
-  {path:'admin',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'table/:id',component:TableComponent},
@@ -26,6 +33,17 @@ const routes: Routes = [
   {path:'myorders',component:MyordersComponent,canActivate:[AuthGuard]},
   {path:'billstatus/:id',component:BillstatusComponent,canActivate:[AuthGuard]},
   {path:'myprofile',component:MyprofileComponent,canActivate:[AuthGuard]},
+
+  // AdminRoutes
+  {path:'adminlogin',component:AdminloginComponent},
+  {path:'adminsignup',component:AdminsignupComponent,canActivate:[AuthGuard]},
+  {path:'admin',component:HomeComponent,canActivate:[AuthGuard]},
+  {path:'admintables',component:TablesComponent,canActivate:[AuthGuard]},
+  {path:'pendingDeliveries',component:PendingdeliveriesComponent,canActivate:[AuthGuard]},
+
+
+
+
   
 ];
 

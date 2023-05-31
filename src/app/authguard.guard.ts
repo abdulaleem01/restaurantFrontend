@@ -3,6 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { MyserviceService } from './myservice.service';
 import { Router,Route } from '@angular/router';
+import { MyadminserviceService } from './myadminservice.service';
 
 
 
@@ -11,7 +12,7 @@ import { Router,Route } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(public myauth:MyserviceService,private route:Router){}
+  constructor(public myauth:MyserviceService,private route:Router , private myadmin:MyadminserviceService){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -29,6 +30,18 @@ export class AuthGuard implements CanActivate {
  
       return true;
     }
+    if (path?.includes('admin') || path?.includes('admintables') || path?.includes('pendingDeliveries')|| path?.includes('adminsignup')) {
+      
+      if(this.myadmin.isAdminLoggedIn === 1){
+        return true;
+      }
+      else{
+        this.route.navigateByUrl('/adminlogin'); 
+        return false;
+      }
+    }
+
+    
 
     // if (path?.includes('nursehome') && this.myauth.authour==='nurse.com' ) {
  

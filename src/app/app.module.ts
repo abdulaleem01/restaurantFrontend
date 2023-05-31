@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';  
 // import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +22,11 @@ import { MyordersComponent } from './customer/myorders/myorders.component';
 import { BillstatusComponent } from './customer/billstatus/billstatus.component';
 import { MyprofileComponent } from './customer/myprofile/myprofile.component';
 import { ChpasswordComponent } from './customer/chpassword/chpassword.component';
+import { NavbaComponent } from './admin/navba/navba.component';
+import { TablesComponent } from './admin/tables/tables.component';
+import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
+import { AdminsignupComponent } from './admin/adminsignup/adminsignup.component';
+import { PendingdeliveriesComponent } from './admin/pendingdeliveries/pendingdeliveries.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { ChpasswordComponent } from './customer/chpassword/chpassword.component'
     MyordersComponent,
     BillstatusComponent,
     MyprofileComponent,
-    ChpasswordComponent
+    ChpasswordComponent,
+    NavbaComponent,
+    TablesComponent,
+    AdminloginComponent,
+    AdminsignupComponent,
+    PendingdeliveriesComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +59,9 @@ import { ChpasswordComponent } from './customer/chpassword/chpassword.component'
     ScrollingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class AppModule { }

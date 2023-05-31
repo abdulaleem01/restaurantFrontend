@@ -15,7 +15,12 @@ export class MyserviceService {
   screenHeight = window.innerHeight;
   screenWidth = window.innerWidth;
 
+  //Production
   domainUrl:string="https://abdulbackendrestaurant.azurewebsites.net/api";
+
+  //Devlopment
+  // domainUrl:string="https://localhost:7145/api";
+
   customerId!:number;
   tableNo!:number;
   visitId!:number;
