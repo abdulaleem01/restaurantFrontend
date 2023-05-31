@@ -1,0 +1,22 @@
+.coll{
+    background-color: transparent;
+    border-color: transparent;
+}
+.offcanbg{
+    background-color: black;
+    color: white;
+}
+.libg{
+    background-color:#0000B8;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    display: flex;
+}
+.icont{
+    margin-left: auto;
+    margin-right: 10px;
+    /* align-self: center; */
+}

@@ -1,0 +1,40 @@
+<app-navba>
+
+</app-navba>
+
+<div class="head">
+    <div class="bg1">
+        <div class="container text-center">
+            <h1 class="hh">Pending Deliveries</h1>
+            <div class="row">
+              <div class="col xx" *ngFor="let i of details">
+                
+                <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{i.visitId}}</h5>
+              <h5 class="card-title"><b>Table No - </b> {{i.tableId}}</h5>
+              <h6>Date - {{i.date}}</h6>
+              <h6>Time - {{i.time}}</h6>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            </div>
+            <ul class="list-group list-group-flush" *ngFor="let j of i.orderDishModelsList ">
+              <li class="list-group-item">
+                {{j.name}}
+              </li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
+            </ul>
+            <div class="card-body">
+                <button (click)="OnDone(i.visitId)" type="button"  class="btn btn-success">Done</button>
+            </div>
+          </div>
+
+              </div>
+              
+            </div>
+          </div>
+
+        
+
+    </div>
+</div>
