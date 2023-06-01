@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 import { LoginClass } from './customer/login/login.component';
+import { Menu } from './admin/menuoption/menuoption.component';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +62,37 @@ public GetDeliveryDetailsByDEliveryStatus():Observable<any>{
   const url = `${this.domainUrl}/Admin/GetDeliveryDetailsByDEliveryStatus/1`;
   return this.http.get<any>(url,{headers:header});
 }
+
+public GetAllDishes():Observable<any>{
+  const token = localStorage.getItem('atoken');
+  const header = {'Authorization':`Bearer ${token}`};
+  const url = `${this.domainUrl}/Admin/GetAllDishes`;
+  return this.http.get<any>(url,{headers:header});
+}
+
+public DeleteDish(dishId:number):Observable<any>{
+  const token = localStorage.getItem('atoken');
+  const header = {'Authorization':`Bearer ${token}`};
+  const url = `${this.domainUrl}/Admin/DeleteDish/${dishId}`;
+  return this.http.delete<any>(url,{headers:header});
+  
+}
+
+public AddDish(men:Menu):Observable<any>{
+  const token = localStorage.getItem('atoken');
+  const header = {'Authorization':`Bearer ${token}`};
+  const url = `${this.domainUrl}/Admin/AddDishes`;
+  return this.http.post<any>(url,men,{headers:header});
+  
+}
+
+public AddDishImage(img:any):Observable<any>{
+  const token = localStorage.getItem('atoken');
+  const header = {'Authorization':`Bearer ${token}`};
+  const url = `${this.domainUrl}/Admin/AddDishPicture`;
+  return this.http.post<any>(url,img,{headers:header});
+}
+
   
 
 

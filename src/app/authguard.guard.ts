@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate {
  
       return true;
     }
-    if (path?.includes('admin') || path?.includes('admintables') || path?.includes('pendingDeliveries')|| path?.includes('adminsignup')) {
+    if (path?.includes('admin') || path?.includes('admintables') || path?.includes('pendingDeliveries')|| path?.includes('adminsignup')|| path?.includes('menuoption')) {
       
       if(this.myadmin.isAdminLoggedIn === 1){
         return true;

@@ -16,7 +16,7 @@ import { TablesComponent } from './admin/tables/tables.component';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminsignupComponent } from './admin/adminsignup/adminsignup.component';
 import { PendingdeliveriesComponent } from './admin/pendingdeliveries/pendingdeliveries.component';
-
+import { MenuoptionComponent } from './admin/menuoption/menuoption.component';
 
 
 import { AuthGuard } from './authguard.guard';
@@ -40,7 +40,7 @@ const routes: Routes = [
   {path:'admin',component:HomeComponent,canActivate:[AuthGuard]},
   {path:'admintables',component:TablesComponent,canActivate:[AuthGuard]},
   {path:'pendingDeliveries',component:PendingdeliveriesComponent,canActivate:[AuthGuard]},
-
+  {path:'menuoption',component:MenuoptionComponent,canActivate:[AuthGuard]},
 
 
 

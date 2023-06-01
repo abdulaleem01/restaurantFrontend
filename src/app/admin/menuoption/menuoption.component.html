@@ -1,0 +1,80 @@
+<app-navba> </app-navba>
+
+<div class="main">
+    <div class="bg1">
+        <div class="container text-center">
+            <h1>Menu</h1>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add Menu
+              </button>
+            <div class="row">
+              <div class="col-xl-4 xx" *ngFor="let i of dishes">
+                    <div class="card mrr" style="width: 18rem;">
+                        <!-- <img src ="https://restaurantstorage.blob.core.windows.net/dishesimage/" class="card-img-top" alt="..."> -->
+                        <img src ="https://restaurantstorage.blob.core.windows.net/dishesimage/{{i.imageUrl}}" class="card-img-top" alt="...">
+            
+                        <div class="card-body">
+                          <h4 class="card-title">{{i.name}}</h4>
+                          <p class="card-text">Description : {{i.description}}</p>
+                          <h5 class="card-title"><b>Price : </b>{{i.price}}Rs</h5>
+                          <h6><b>Preparation Time : </b> {{i.cookingTime}}mins</h6>
+                          
+            
+                          <a (click)="onRemove(i.dishId)" class="btn btn-primary">Remove</a>
+                        
+                        </div>
+                      </div>
+                
+              
+              
+            </div>
+          </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- 
+
+             -->
+             <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Dish Name</span>
+                <input [(ngModel)]="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-text">Description</span>
+                <textarea [(ngModel)]="description" class="form-control" aria-label="With textarea"></textarea>
+              </div>
+              &nbsp;
+
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
+                <input [(ngModel)]="price" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+              <div class="input-group mb-3">
+                <input (change)="onFileChanged($event)" type="file" class="form-control" id="inputGroupFile02">
+                <label class="input-group-text" for="inputGroupFile02">Dish Image</label>
+              </div>
+
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Preparation Time</span>
+                <input [(ngModel)]="cookingtime" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button (click)="onAdd()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

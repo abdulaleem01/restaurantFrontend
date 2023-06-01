@@ -27,6 +27,7 @@ import { TablesComponent } from './admin/tables/tables.component';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminsignupComponent } from './admin/adminsignup/adminsignup.component';
 import { PendingdeliveriesComponent } from './admin/pendingdeliveries/pendingdeliveries.component';
+import { MenuoptionComponent } from './admin/menuoption/menuoption.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PendingdeliveriesComponent } from './admin/pendingdeliveries/pendingdel
     TablesComponent,
     AdminloginComponent,
     AdminsignupComponent,
-    PendingdeliveriesComponent
+    PendingdeliveriesComponent,
+    MenuoptionComponent
   ],
   imports: [
     BrowserModule,
